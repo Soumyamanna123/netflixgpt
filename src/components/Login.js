@@ -9,7 +9,7 @@ const Login = () => {
   };
 
   const handleButtonClick =()=>{
-    
+
   }
 
   return (
@@ -47,7 +47,7 @@ const Login = () => {
           onClick={togglesigninform}
         >
           {isSignInForm
-            ? "New to Netflix? Sign Up Now"
+            ? "New to Netflix? Sign Up Now."
             : "Already registered? Sign In Now."}
         </p>
       </form>
