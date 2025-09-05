@@ -35,7 +35,11 @@ const Login = () => {
     e.preventDefault();
 
     // Validate email and password
-    const message = checkValidData(email.current.value, password.current.value);
+    const message = checkValidData(
+      email.current.value,
+      password.current.value,
+   
+    );
     setErrorMessage(message);
 
     // If validation fails, stop the process
@@ -45,6 +49,7 @@ const Login = () => {
     if (!isSignInForm) {
       createUserWithEmailAndPassword(
         auth,
+
         email.current.value,
         password.current.value
       )
@@ -60,10 +65,14 @@ const Login = () => {
             .then(() => {
               // Profile updated!
               // ...
+
+              navigate("/browse");
             })
             .catch((error) => {
               // An error occurred
               // ...
+              console.error("Profile update failed", error);
+              setErrorMessage("Profile update failed: " + error.message);
             });
         })
         .catch((error) => {
